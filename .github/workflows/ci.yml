@@ -27,12 +27,14 @@ jobs:
       shell: pwsh
       run: |
         $bashrcHome = Join-Path $env:HOME ".bashrc"
-        $content = @"
+        $content = @'
         # =======================================
         # Fix GPG signing issue
         # =======================================
+        
         export GPG_TTY=$(tty)
-        "@
+        
+        '@
         Add-Content $bashrcHome $content
   
     - name: Print .bashrc
