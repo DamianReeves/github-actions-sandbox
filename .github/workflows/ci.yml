@@ -38,4 +38,4 @@ jobs:
     - name: Print .bashrc
       shell: pwsh
       run: |
-        Join-Path $env:HOME ".bashrc" | Get-Content | echo
+        Get-Content -Path (Join-Path $env:HOME ".bashrc") | echo
